@@ -1,0 +1,16 @@
+RewriteEngine on
+
+RewriteCond %{HTTP_REFERER} !^http://bioreclaimventures.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://bioreclaimventures.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.bioreclaimventures.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.bioreclaimventures.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://bioreclaimventures.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://bioreclaimventures.com$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.bioreclaimventures.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.bioreclaimventures.com$      [NC]
+RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$ https://www.bioreclaimventures.com [R,NC]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
+
+
